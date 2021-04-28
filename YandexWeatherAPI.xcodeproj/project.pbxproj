@@ -14,6 +14,11 @@
 		697AB39B2639417F004798D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697AB39A2639417F004798D0 /* Assets.xcassets */; };
 		697AB39E2639417F004798D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697AB39C2639417F004798D0 /* LaunchScreen.storyboard */; };
 		697AB3B02639438E004798D0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB3AF2639438E004798D0 /* MainTableViewController.swift */; };
+		697AB3B526396F92004798D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB3B426396F92004798D0 /* NetworkManager.swift */; };
+		697AB3B926396FCC004798D0 /* Coordinates2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB3B826396FCC004798D0 /* Coordinates2D.swift */; };
+		697AB3BC26397005004798D0 /* YandexWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB3BB26397005004798D0 /* YandexWeatherData.swift */; };
+		697AB3BF26397352004798D0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB3BE26397352004798D0 /* LocationManager.swift */; };
+		697AB3C2263974D4004798D0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AB3C1263974D4004798D0 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		697AB39D2639417F004798D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		697AB39F2639417F004798D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		697AB3AF2639438E004798D0 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		697AB3B426396F92004798D0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		697AB3B826396FCC004798D0 /* Coordinates2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates2D.swift; sourceTree = "<group>"; };
+		697AB3BB26397005004798D0 /* YandexWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexWeatherData.swift; sourceTree = "<group>"; };
+		697AB3BE26397352004798D0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		697AB3C1263974D4004798D0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 				697AB3AC26394279004798D0 /* Models */,
 				697AB3A926394256004798D0 /* Views */,
 				697AB3AA26394260004798D0 /* Controllers */,
+				697AB3B326396F71004798D0 /* Services */,
 				697AB3A826394244004798D0 /* Resources */,
 				697AB3A72639422A004798D0 /* Supports */,
 			);
@@ -106,8 +117,20 @@
 		697AB3AC26394279004798D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				697AB3B826396FCC004798D0 /* Coordinates2D.swift */,
+				697AB3BB26397005004798D0 /* YandexWeatherData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		697AB3B326396F71004798D0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				697AB3B426396F92004798D0 /* NetworkManager.swift */,
+				697AB3BE26397352004798D0 /* LocationManager.swift */,
+				697AB3C1263974D4004798D0 /* DataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +205,13 @@
 			files = (
 				697AB3B02639438E004798D0 /* MainTableViewController.swift in Sources */,
 				697AB39626394179004798D0 /* ViewController.swift in Sources */,
+				697AB3B526396F92004798D0 /* NetworkManager.swift in Sources */,
 				697AB39226394179004798D0 /* AppDelegate.swift in Sources */,
+				697AB3BF26397352004798D0 /* LocationManager.swift in Sources */,
+				697AB3BC26397005004798D0 /* YandexWeatherData.swift in Sources */,
 				697AB39426394179004798D0 /* SceneDelegate.swift in Sources */,
+				697AB3C2263974D4004798D0 /* DataManager.swift in Sources */,
+				697AB3B926396FCC004798D0 /* Coordinates2D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
