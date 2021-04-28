@@ -56,15 +56,55 @@
 		697AB39026394179004798D0 /* YandexWeatherAPI */ = {
 			isa = PBXGroup;
 			children = (
-				697AB39126394179004798D0 /* AppDelegate.swift */,
-				697AB39326394179004798D0 /* SceneDelegate.swift */,
-				697AB39526394179004798D0 /* ViewController.swift */,
-				697AB39726394179004798D0 /* Main.storyboard */,
-				697AB39A2639417F004798D0 /* Assets.xcassets */,
-				697AB39C2639417F004798D0 /* LaunchScreen.storyboard */,
-				697AB39F2639417F004798D0 /* Info.plist */,
+				697AB3AC26394279004798D0 /* Models */,
+				697AB3A926394256004798D0 /* Views */,
+				697AB3AA26394260004798D0 /* Controllers */,
+				697AB3A826394244004798D0 /* Resources */,
+				697AB3A72639422A004798D0 /* Supports */,
 			);
 			path = YandexWeatherAPI;
+			sourceTree = "<group>";
+		};
+		697AB3A72639422A004798D0 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				697AB39126394179004798D0 /* AppDelegate.swift */,
+				697AB39326394179004798D0 /* SceneDelegate.swift */,
+				697AB39F2639417F004798D0 /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		697AB3A826394244004798D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				697AB39A2639417F004798D0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		697AB3A926394256004798D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				697AB39726394179004798D0 /* Main.storyboard */,
+				697AB39C2639417F004798D0 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		697AB3AA26394260004798D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				697AB39526394179004798D0 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		697AB3AC26394279004798D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJN9TW8RPS;
-				INFOPLIST_FILE = YandexWeatherAPI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YandexWeatherAPI/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJN9TW8RPS;
-				INFOPLIST_FILE = YandexWeatherAPI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YandexWeatherAPI/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
