@@ -8,38 +8,35 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
+    
+    var viewModel: MainViewModelProtocol! {
+        didSet {
+            viewModel.fetchWeatherData(closure: {
+                self.activityIndicator.stopAnimating()
+            })
+        }
+    }
+    
+    private var activityIndicator = UIActivityIndicatorView()
 
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        viewLoading()
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModel.numberOfRows
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",
+                                                 for: indexPath) as! CityCell
+        let cellViewModel = self.viewModel.cellViewModel(at: indexPath)
+        cell.viewModel = cellViewModel
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,4 +83,12 @@ class MainTableViewController: UITableViewController {
     }
     */
 
+    // MARK: - Methods
+    func viewLoading() {
+        tableView.rowHeight = 50
+        view.addSubview(activityIndicator)
+        activityIndicator.center = self.view.center
+        activityIndicator.startAnimating()
+        viewModel = MainViewModel(reloadData: self.tableView.reloadData)
+    }
 }

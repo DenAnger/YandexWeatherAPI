@@ -77,3 +77,16 @@ class NetworkManager {
         return nil
     }
 }
+
+// MARK: - SVG Loader
+extension NetworkManager {
+    func loadIconData(iconName: String?) -> Data? {
+        let url = self.iconUrl + (iconName ?? "ovc") + ".svg"
+        
+        if let url = URL(string: url),
+           let data = try? Data(contentsOf: url) {
+            return data
+        }
+        return nil
+    }
+}

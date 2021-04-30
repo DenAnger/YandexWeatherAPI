@@ -10,12 +10,12 @@ import Foundation
 struct YandexWeatherData: Codable {
     let geoObject: GeoObject
     let fact: Fact
-    let forecast: [Forecast]
+    let forecasts: [Forecast]
     
     enum CodingKeys: String, CodingKey {
         case geoObject = "geo_object"
         case fact
-        case forecast
+        case forecasts
     }
 }
 

@@ -10,7 +10,7 @@ import CoreLocation
 struct LocationManager {
     
     func getCoordinate(forCity cityName: String,
-                       complitionHandler: @escaping(Coordinates2D?)->()) {
+                       complitionHandler: @escaping(Coordinates2D?) -> Void) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(cityName) { (placemarks, error) in
             
