@@ -72,17 +72,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="NJ1-lO-nsa"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToDetailView" id="Eza-rL-6DV"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToDetailView" id="9xt-eI-I8O"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hm5-CM-V1t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-17.39130434782609" y="94.419642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YandexWeatherAPI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DetailViewController" customModule="YandexWeatherAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,8 +96,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m2a-hd-bDY">
-                                        <rect key="frame" x="0.0" y="24.5" width="80" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m2a-hd-bDY">
+                                        <rect key="frame" x="0.0" y="24" width="80" height="80.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="m2a-hd-bDY" secondAttribute="height" multiplier="1:1" id="6lu-uz-zZu"/>
                                             <constraint firstAttribute="height" constant="80" id="Um5-Ek-2GF"/>
@@ -117,14 +117,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="TjY-yI-VzE"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LS5-HE-42X">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LS5-HE-42X">
                                     <size key="itemSize" width="50" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hourCell" id="udq-Yi-NYT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hourCell" id="udq-Yi-NYT" customClass="HourCell" customModule="YandexWeatherAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5pd-4M-W33">
@@ -160,18 +160,23 @@
                                                 <constraint firstItem="DqE-78-kXR" firstAttribute="top" secondItem="rHj-2w-NDw" secondAttribute="bottom" constant="3" id="uGE-fC-oOH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="hourLabel" destination="nWC-de-JdN" id="KrS-Ye-0oF"/>
+                                            <outlet property="tempLabel" destination="DqE-78-kXR" id="MMw-Wk-wwY"/>
+                                            <outlet property="weatherImageView" destination="rHj-2w-NDw" id="HFP-Ql-0Tb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CYb-rM-h6m"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QaY-Lt-TIO"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AQc-yK-OWq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="udX-30-J4X"/>
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-zO-Sj8">
                                 <rect key="frame" x="10" y="367" width="394" height="485"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekdayCell" rowHeight="50" id="b6V-pF-IQa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayOfTheWeekCell" rowHeight="50" id="b6V-pF-IQa" customClass="DayOfTheWeekCell" customModule="YandexWeatherAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="394" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b6V-pF-IQa" id="N4Y-sw-SOj">
@@ -217,11 +222,17 @@
                                                 <constraint firstItem="bSQ-Zx-cuy" firstAttribute="centerY" secondItem="N4Y-sw-SOj" secondAttribute="centerY" id="vuo-VW-zF6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="conditionImageView" destination="w2V-p7-acQ" id="kc3-Pt-qFo"/>
+                                            <outlet property="dayOfTheWeekLabel" destination="5H3-Fh-4uj" id="Uoc-eU-hYL"/>
+                                            <outlet property="dayTempLabel" destination="Byu-29-fir" id="NXi-Ri-jhd"/>
+                                            <outlet property="nightTempLabel" destination="amh-lV-zWr" id="alm-au-mmE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="D7d-6d-a29"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tRu-Y6-GQk"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="buc-Yu-6hq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="E0d-Nh-lfZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -240,6 +251,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b62-iw-Y7f"/>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="hRw-ub-3Jf" id="KU0-GT-AYG"/>
+                        <outlet property="currentTempLabel" destination="0yH-vT-ckU" id="yrq-7d-eVo"/>
+                        <outlet property="dayOfTheWeekTableView" destination="Qxb-zO-Sj8" id="5ze-u0-yfz"/>
+                        <outlet property="hourCollectionView" destination="GC9-aj-gRN" id="rEk-Lu-Say"/>
+                        <outlet property="weatherIconView" destination="m2a-hd-bDY" id="3pW-Ro-mFP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
